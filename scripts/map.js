@@ -1,30 +1,30 @@
 // /api/records/1.0/search/?dataset=espaces_verts&q=&rows=10&facet=type_ev&facet=categorie&facet=adresse_codepostal&facet=presence_cloture&facet=ouvert_ferme&
 
 window.onload = function() {
-    $(function() {
-        $("#load").button();
+    // $(function() {
+    //     $("#load").button();
 
-        $("#load").click(function(event) {
-            event.preventDefault();
+    //     $("#load").click(function(event) {
+    //         event.preventDefault();
         
-            get_parcs().then((data) => {
-                console.log(data['nhits']);
+    //         get_parcs().then((data) => {
+    //             console.log(data['nhits']);
 
-                $.each(data['records'], function() {
-                    const fields = this['fields'];
-                    const nom = fields.nom_ev;
-                    let coordinates = fields.geom.coordinates[0][0];
+    //             $.each(data['records'], function() {
+    //                 const fields = this['fields'];
+    //                 const nom = fields.nom_ev;
+    //                 let coordinates = fields.geom.coordinates[0][0];
                     
-                    if(coordinates.length > 2)
-                        coordinates = coordinates[0];
+    //                 if(coordinates.length > 2)
+    //                     coordinates = coordinates[0];
                     
-                    console.log(nom + " " + coordinates);
-                });
-            }).catch((erreur) => {
-                alert("tes moche " + erreur);
-            });
-        });
-    });
+    //                 console.log(nom + " " + coordinates);
+    //             });
+    //         }).catch((erreur) => {
+    //             alert("tes moche " + erreur);
+    //         });
+    //     });
+    // });
 
 	//Chargement initial de la MAP
 	var map = L.map('map').setView([14,-14.8883335],4);
