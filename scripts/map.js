@@ -20,7 +20,7 @@ window.onload = function() {
 					console.log(data['nhits']);
 
 					$.each(data['records'], function() {
-						console.log(this['fields']['nom_ev'] + " " + this['fields']['geom']['coordinates'][0]);
+						console.log(this['fields']['nom_ev'] + " " + this['fields']['geom']['coordinates'][0][0]);
                     });
 			    }
 			});
