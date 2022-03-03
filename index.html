@@ -4,14 +4,14 @@
     <title>Treevago</title>
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-1.7.1/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
     
     <script src="http://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
 
-    <!-- <script type="text/javascript" src="scripts/api.js"></script> -->
+    <script type="text/javascript" src="scripts/api.js"></script>
     <script type="text/javascript" src="scripts/map.js"></script>
 
     <link href="styles/main.css" rel="stylesheet"/>
@@ -29,27 +29,26 @@
 	</ul>
 	</p>
 		
-    <!-- <button id="load">Bouton load</button> -->
+    <button id="proche">Trouver le parc le plus proche</button>
 
 	<div id="map"></div>
 
-	<div id="France" class="ui-widget-content">
-		<p>France</p>
-	</div>
-	<div id="Canada" class="ui-widget-content">
-		<p>Canada</p>
-	</div>
-	<div id="Italie" class="ui-widget-content">
-		<p>Italie</p>
-	</div>
-	<div id="Belgique" class="ui-widget-content">
-		<p>Belgique</p>
-	</div>
-	<div id="Japan" class="ui-widget-content">
-		<p>Japan</p>
-	</div>
-	<div id="info" class="ui-widget-content">
-		<p>Location (Gps)</p>
-	</div>
+    <div id="blocs">
+        <div id="trocadero" class="bloc">
+            <p>JARDINS DU TROCADERO</p>
+        </div>
+        <div id="champs-de-mars" class="bloc">
+            <p>JARDIN DU CHAMP DE MARS ET PELOUSES DE L'ECOLE MILITAIRE</p>
+        </div>
+        <div id="bercy" class="bloc">
+            <p>ILE DE BERCY</p>
+        </div>
+        <div id="floral" class="bloc">
+            <p>PARC FLORAL DE PARIS</p>
+        </div>
+        <div id="boulogne" class="bloc">
+            <p>JARDIN DU PRE CATELAN</p>
+        </div>
+    </div>
 </body>
 </html>

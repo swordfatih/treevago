@@ -2,14 +2,25 @@ body {
     background-color: green;
 }
 
-.ui-widget-content 
+#blocs {
+    display: flex;
+}
+
+.bloc
 { 
     width: 130px; 
-    height: 100px; 
-    padding: 0.5em; 
-    float: left; 
+    height: 130px; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
     margin: 10px 10px 10px 0; 
-    background-color: #ccffcc;
+    
+    color: white;
+    border-radius: 10px;
+    background-color: #0e500ecb;
 }
 
 #droppable 
@@ -23,6 +34,6 @@ body {
 
 #map 
 { 
-    height: 300px; 
-    width:900px;
+    height: 500px; 
+    width: 900px;
 }
