@@ -101,6 +101,7 @@ window.onload = function() {
 
             map.removeLayer(parcs[nom_parc].marker);
             parcs[nom_parc].marker = L.marker(parcs[nom_parc].position, { opacity: 1 }).addTo(map).bindPopup(parcs[nom_parc].nom).openPopup();
+            // Reinitialiser après drag
             
             // var chaine="";
             // chaine+="Parc : "+IdParc+"</br>";
