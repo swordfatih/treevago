@@ -20,7 +20,14 @@ window.onload = function() {
 					console.log(data['nhits']);
 
 					$.each(data['records'], function() {
-						console.log(this['fields']['nom_ev'] + " " + this['fields']['geom']['coordinates'][0][0]);
+                        const fields = this['fields'];
+                        const nom = fields.nom_ev;
+                        let coordinates = fields.geom.coordinates[0][0];
+                        
+                        if(coordinates.length > 2)
+                            coordinates = coordinates[0];
+                    
+						console.log(nom + " " + coordinates);
                     });
 			    }
 			});
