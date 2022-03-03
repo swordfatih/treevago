@@ -1,3 +1,6 @@
+// https://opendata.paris.fr/api/records/1.0/search/?dataset=espaces_verts&q=&rows=100&facet=type_ev&facet=categorie&facet=adresse_codepostal&facet=presence_cloture&facet=ouvert_ferme
+
+
 window.onload = function () {
 	
 	//Chargement initial de la MAP
