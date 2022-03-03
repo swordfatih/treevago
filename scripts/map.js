@@ -1,3 +1,5 @@
+// /api/records/1.0/search/?dataset=espaces_verts&q=&rows=10&facet=type_ev&facet=categorie&facet=adresse_codepostal&facet=presence_cloture&facet=ouvert_ferme&
+
 window.onload = function() {
     $(function() {
         $("#load").button();
@@ -10,7 +12,18 @@ window.onload = function() {
 			    url: "https://opendata.paris.fr/api/records/1.0/search/",
 			    dataType: 'jsonp',
 			    jsonpCallback: 'data',
-			    data: { dataset: "espaces_verts", rows: 100, q: "", facet: "type_ev", facet: "categorie", facet: "adresse_codepostal",facet: "presence_cloture", facet: "ouvert_ferme", json_callback: 'data' },
+			    data: { dataset: "espaces_verts", rows: 100, q: "", facet: "type_ev", facet: "categorie", facet: "adresse_codepostal",facet: "presence_cloture", facet: "ouvert_ferme", json_callback: 'data',
+                    exclude: { categorie:"Cimetière", 
+                                categorie:"Decoration", 
+                                categorie:"Jardin d'immeubles", 
+                                categorie:"Jardin partage", 
+                                categorie:"Jardiniere", 
+                                categorie:"Mail", 
+                                categorie:"Murs vegetalises", 
+                                categorie:"Plate-bande", 
+                                categorie:"Talus", 
+                                categorie:"Terrain de boules", 
+                                categorie:"Terre-plein" } },
 			    error: function(xhr, status, error) {
 					alert("Y'a une erreur bg et c'est toi " + error);
 			    },
