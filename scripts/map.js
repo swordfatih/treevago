@@ -7,30 +7,22 @@ window.onload = function() {
         $("#load").click(function(event) {
             event.preventDefault();
         
-            $.ajax({
-			    type: 'GET',
-			    url: "https://opendata.paris.fr/api/records/1.0/search/?exclude.categorie=Cimetière&exclude.categorie=Decoration&exclude.categorie=Jardin+d'immeubles&exclude.categorie=Jardin+partage&exclude.categorie=Jardiniere&exclude.categorie=Mail&exclude.categorie=Murs+vegetalises&exclude.categorie=Plate-bande&exclude.categorie=Talus&exclude.categorie=Terrain+de+boules&exclude.categorie=Terre-plein",
-			    dataType: 'jsonp',
-			    jsonpCallback: 'data',
-			    data: { dataset: "espaces_verts", rows: 100, q: "", facet: "type_ev", facet: "categorie", facet: "adresse_codepostal",facet: "presence_cloture", facet: "ouvert_ferme", json_callback: 'data' },
-			    error: function(xhr, status, error) {
-					alert("Y'a une erreur bg et c'est toi " + error);
-			    },
-			    success: function(data) {
-					console.log(data['nhits']);
+            get_parcs().then(() => {
+                console.log(data['nhits']);
 
-					$.each(data['records'], function() {
-                        const fields = this['fields'];
-                        const nom = fields.nom_ev;
-                        let coordinates = fields.geom.coordinates[0][0];
-                        
-                        if(coordinates.length > 2)
-                            coordinates = coordinates[0];
+                $.each(data['records'], function() {
+                    const fields = this['fields'];
+                    const nom = fields.nom_ev;
+                    let coordinates = fields.geom.coordinates[0][0];
                     
-						console.log(nom + " " + coordinates);
-                    });
-			    }
-			});
+                    if(coordinates.length > 2)
+                        coordinates = coordinates[0];
+                    
+                    console.log(nom + " " + coordinates);
+                });
+            }).catch(() => {
+                alert("tes moche");
+            });
         });
     });
 }
