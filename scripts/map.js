@@ -13,7 +13,6 @@ window.onload = function() {
 			    dataType: 'jsonp',
 			    jsonpCallback: 'data',
 			    data: { dataset: "espaces_verts", rows: 100, q: "", facet: "type_ev", facet: "categorie", facet: "adresse_codepostal",facet: "presence_cloture", facet: "ouvert_ferme", json_callback: 'data' },
-                    //"exclude.categorie":"Cimetière", "exclude.categorie":"Decoration", "exclude.categorie":"Jardin d'immeubles", "exclude.categorie":"Jardin partage", "exclude.categorie":"Jardiniere", "exclude.categorie":"Mail", "exclude.categorie":"Murs vegetalises", "exclude.categorie":"Plate-bande", "exclude.categorie":"Talus", "exclude.categorie":"Terrain de boules", "exclude.categorie":"Terre-plein"  },
 			    error: function(xhr, status, error) {
 					alert("Y'a une erreur bg et c'est toi " + error);
 			    },
@@ -21,7 +20,7 @@ window.onload = function() {
 					console.log(data['nhits']);
 
 					$.each(data['records'], function() {
-						console.log(this['fields']['nom_ev']);
+						console.log(this['fields']['nom_ev'] + " " + this['fields']['geom']['coordinates'][0]);
                     });
 			    }
 			});
