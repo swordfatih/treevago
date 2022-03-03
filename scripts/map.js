@@ -1,13 +1,25 @@
-// https://opendata.paris.fr/api/records/1.0/search/?dataset=espaces_verts&q=&rows=100&facet=type_ev&facet=categorie&facet=adresse_codepostal&facet=presence_cloture&facet=ouvert_ferme
+window.onload = function() {
+    $(function() {
+        $("#load").button();
 
-
-window.onload = function () {
-    $( function() {
-        $( ".widget input[type=submit], .widget a, .widget button" ).button();
-        $( "button, input, a" ).click( function( event ) {
-          event.preventDefault();
-        } );
-      } );
+        $("#load").click(function(event) {
+            event.preventDefault();
+        
+            $.ajax({
+			    type: 'GET',
+			    url: "https://opendata.paris.fr/api/records/1.0/search/",
+			    dataType: 'jsonp',
+			    jsonpCallback: 'data',
+			    data: { dataset: "espaces_verts", rows: 100, q: "", facet: "type_ev", facet: "categorie", facet: "adresse_codepostal",facet: "presence_cloture", facet: "ouvert_ferme", json_callback: 'data' },
+			    error: function(xhr, status, error) {
+					alert("Y'a une erreur bg et c'est toi " + error);
+			    },
+			    success: function(data) {
+					console.log(data);
+			    }
+			});
+        });
+    });
 }
 
 /*
