@@ -15,7 +15,11 @@ window.onload = function() {
 					alert("Y'a une erreur bg et c'est toi " + error);
 			    },
 			    success: function(data) {
-					console.log(data);
+					console.log(data['nhits']);
+
+					$.each(data['records'], function() {
+						console.log(this['fields']['nom_ev']);
+                    });
 			    }
 			});
         });
