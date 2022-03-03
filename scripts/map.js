@@ -7,7 +7,7 @@ window.onload = function() {
         $("#load").click(function(event) {
             event.preventDefault();
         
-            get_parcs().then(() => {
+            get_parcs().then((data) => {
                 console.log(data['nhits']);
 
                 $.each(data['records'], function() {
@@ -20,7 +20,7 @@ window.onload = function() {
                     
                     console.log(nom + " " + coordinates);
                 });
-            }).catch(() => {
+            }).catch((erreur) => {
                 alert("tes moche");
             });
         });
