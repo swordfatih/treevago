@@ -1,6 +1,20 @@
 @import url("header.css");
-@import url("carte.css");
-@import url("https://fontlibrary.org/face/metropolis");
+@import url("carte.css");   
+@import url("authentification.css");   
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('../assets/fonts/Metropolis-Bold.otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Metropolis";
+    src: url("../assets/fonts/Metropolis-Thin.otf");
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
     box-sizing: border-box;

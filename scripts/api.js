@@ -17,3 +17,19 @@ function get_parcs() {
     });
 }
 
+function authentifier(login, mdp) {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            type: 'GET',
+            url: "/treevago/api",
+            data: { login: "jeff", mdp: "boss" },
+            error: function(xhr, status, error) {
+                reject(error);
+            },
+            success: function(data) {
+                resolve(data);
+            }
+        });
+    });
+}
+

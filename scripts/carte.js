@@ -7,7 +7,9 @@ let selection = null;
 /////////////////////////////////////////////////
 function creer_carte() {
     let map = L.map('carte').setView([48.856614, 2.3522219], 12);
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: 'PING'}).addTo(map);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: 'PING'
+    }).addTo(map);
     return map;
 }
 

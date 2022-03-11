@@ -1,0 +1,62 @@
+#blocs {
+    display: flex;
+    flex-wrap: wrap;
+
+    flex-direction: row;
+}
+
+.bloc
+{ 
+    width: 40% !important; 
+    height: 130px; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    margin: 0px 10px 10px 0; 
+    
+    color: white;
+    border-radius: 10px;
+    background-color: #0e500ecb;
+}
+
+.bloc p {
+    font-size: 3vh !important;
+}
+
+#droppable 
+{ 
+    width: 100; 
+    height: 150px; 
+    padding: 0.5em; 
+    float: left; 
+    margin: 10px; 
+}
+
+#carte 
+{ 
+    height: 500px; 
+    width: 100%;
+
+    box-shadow: 3px 2px 5px;
+
+    z-index: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    #carte {
+        width: 90%;
+    }
+
+    .bloc p {
+        font-size: 2vh !important;
+    }
+
+    section:first-of-type > aside:last-of-type {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}

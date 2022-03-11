@@ -1,0 +1,23 @@
+#authentification form {
+    width: 100%;
+
+}
+
+#authentification input[type=submit], #authentification input {
+    width: 100%;
+    height: 50px;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    
+    border: none;
+    text-align: center;
+}
+
+#authentification input[type=submit]:hover, #authentification input:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#authentification input[type=submit]:hover {
+    cursor: pointer;
+}

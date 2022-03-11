@@ -3,15 +3,16 @@
     <meta charset="utf-8">
     <title>Treevago</title>
 
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <link rel="stylesheet" href="libraries/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="libraries/leaflet/leaflet.css" />
     
-    <script src="http://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="libraries/jquery/jquery-3.6.0.min.js"></script>
+    <script src="libraries/jquery-ui/jquery-ui.min.js"></script>
+    <script src="libraries/leaflet/leaflet.js"></script>
 
     <script type="text/javascript" src="scripts/api.js"></script>
     <script type="text/javascript" src="scripts/carte.js"></script>
+    <script type="text/javascript" src="scripts/authentification.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
 
     <link href="styles/main.css" rel="stylesheet"/>
@@ -23,7 +24,19 @@
 
 <body>
     <header>
-        <img src="assets/logo.png"/>
+        <div><img src="assets/images/logo.png"/></div>
+        <div>
+            <p id="btn_auth">🔒</p>
+            <div id="authentification" title="Authentification">
+                <p>Authentifiez-vous.</p>
+
+                <form id="form_auth">
+                    <input type="text" placeholder="Votre identifiant" required/>
+                    <input type="password" placeholder="Votre mot de passe" required/>
+                    <input type="submit" value="Se connecter"/>
+                </form>
+            </div>
+        </div>
     </header>
 
     <section>
@@ -33,8 +46,8 @@
                 <p>
                     Deux interations possibles
                     <ul>
-                        <li>Cliquer sur la map pour afficher le pays</li>
-                        <li>Déplacer les blocs DIV pays sur la map pour recentrer la carte sur un pays</li>
+                        <li>Cliquer sur les marqueurs pour afficher leurs noms</li>
+                        <li>Déplacer les blocs des parcs sur la map pour recentrer la carte</li>
                     </ul>
                 </p>
             </div> 

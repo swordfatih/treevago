@@ -38,4 +38,6 @@ window.onload = function() {
 
     $(".bloc").draggable({ revert: "valid" });
     $("#carte").droppable({ drop: function(event, ui) { marquer_parc(carte, parcs, ui); }});
+
+    authentification();
 }
