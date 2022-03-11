@@ -1,39 +1,66 @@
+@import url("header.css");
+@import url("carte.css");
+@import url("https://fontlibrary.org/face/metropolis");
+
+* {
+    box-sizing: border-box;
+    font-family: 'Metropolis';
+}
+
 body {
     background-color: white;
 }
 
-#blocs {
-    display: flex;
+section
+{
+    display : flex;
+    width : 100%;
+
+    margin-bottom: 20px;
 }
 
-.bloc
-{ 
-    width: 130px; 
-    height: 130px; 
-    
+section > aside 
+{
+    width: 100%;
+}
+
+section > aside:first-of-type {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
 
-    margin: 10px 10px 10px 0; 
-    
-    color: white;
-    border-radius: 10px;
-    background-color: #0e500ecb;
+    align-items: center;
 }
 
-#droppable 
-{ 
-    width: 100; 
-    height: 150px; 
-    padding: 0.5em; 
-    float: left; 
-    margin: 10px; 
+section > aside:first-of-type div {
+    width: 80%;
 }
 
-#map 
-{ 
-    height: 500px; 
-    width: 900px;
+section > aside h1 {
+    font-size: 36px;
+}
+
+section > aside p, section > aside ul {
+    font-size: 24px;
+}
+
+section:last-of-type > aside:last-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+section:last-of-type > aside:first-of-type {
+    width: 100%;
+}
+
+button {
+    height: 50px;
+}
+
+@media screen and (max-width: 1200px) 
+{
+    section {
+        flex-direction: column;
+    }
 }

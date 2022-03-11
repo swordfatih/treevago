@@ -22,33 +22,51 @@
 </head>
 
 <body>
-	<p>2 interations possibles : 
-        <ul>
-            <li>Cliquer sur la map pour afficher le pays</li>
-            <li>D&eacute;placer les blocs DIV pays sur la map pour recentrer la carte sur un pays</li>
-        </ul>
-	</p>
-		
-    <button id="proche">Trouver le parc le plus proche</button>
+    <header>
+        <img src="assets/logo.png"/>
+    </header>
 
-	<div id="map"></div>
+    <section>
+        <aside>
+            <div>
+                <h1>Trouvez votre bonheur vert !</h1>
+                <p>
+                    Deux interations possibles
+                    <ul>
+                        <li>Cliquer sur la map pour afficher le pays</li>
+                        <li>Déplacer les blocs DIV pays sur la map pour recentrer la carte sur un pays</li>
+                    </ul>
+                </p>
+            </div> 
+        </aside>
 
-    <div id="blocs">
-        <div id="trocadero" class="bloc">
-            <p>JARDINS DU TROCADERO</p>
-        </div>
-        <div id="champs-de-mars" class="bloc">
-            <p>JARDIN DU CHAMP DE MARS ET PELOUSES DE L'ECOLE MILITAIRE</p>
-        </div>
-        <div id="bercy" class="bloc">
-            <p>ILE DE BERCY</p>
-        </div>
-        <div id="floral" class="bloc">
-            <p>PARC FLORAL DE PARIS</p>
-        </div>
-        <div id="boulogne" class="bloc">
-            <p>JARDIN DU PRE CATELAN</p>
-        </div>
-    </div>
+        <aside>
+            <div id="carte"></div>
+        </aside>
+    </section>
+
+    <section>
+        <aside id="blocs">
+            <div id="trocadero" class="bloc">
+                <p>JARDINS DU TROCADERO</p>
+            </div>
+            <div id="champs-de-mars" class="bloc">
+                <p>JARDIN DU CHAMP DE MARS ET PELOUSES DE L'ECOLE MILITAIRE</p>
+            </div>
+            <div id="bercy" class="bloc">
+                <p>ILE DE BERCY</p>
+            </div>
+            <div id="floral" class="bloc">
+                <p>PARC FLORAL DE PARIS</p>
+            </div>
+            <div id="boulogne" class="bloc">
+                <p>JARDIN DU PRE CATELAN</p>
+            </div>
+        </aside>
+
+        <aside>
+            <button id="proche">Trouver le parc le plus proche</button>
+        </aside>
+    </section>
 </body>
 </html>

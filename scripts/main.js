@@ -37,5 +37,5 @@ window.onload = function() {
     });
 
     $(".bloc").draggable({ revert: "valid" });
-    $("#map").droppable({ drop: function(event, ui) { marquer_parc(carte, parcs, ui); }});
+    $("#carte").droppable({ drop: function(event, ui) { marquer_parc(carte, parcs, ui); }});
 }
