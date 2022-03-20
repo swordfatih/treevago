@@ -26,11 +26,6 @@
     function authentification() {
         require('./modeles/authentifier.php');
 
-        $profil = récuperer_profil();
-
-        if($profil != null)
-            die('Déjà connecté');
-    
         $keys = array('login', 'mdp');
         $data = recuperer_données($keys);
 

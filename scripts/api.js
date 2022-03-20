@@ -22,7 +22,7 @@ function authentifier(login, mdp) {
         $.ajax({
             type: 'GET',
             url: "/treevago/api",
-            data: { login: "jeff", mdp: "boss" },
+            data: { login: login, mdp: mdp },
             error: function(xhr, status, error) {
                 reject(error);
             },
@@ -33,3 +33,18 @@ function authentifier(login, mdp) {
     });
 }
 
+
+
+
+$("#form").submit(function () {
+    var data = $(this).serialize();
+
+    $.ajax({
+        type: 'POST',
+        url: 'google.fr/api/',
+        data: $(this).attr('action'),
+        success: function(donnees) {
+            console.log(donnees);
+        }
+    })
+})

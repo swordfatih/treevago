@@ -70,6 +70,20 @@ function parc_plus_proche(carte, utilisateur, parcs) {
 
     carte.removeLayer(parcs[parc_min.nom].marqueur);
     parcs[parc_min.nom].marqueur = L.marker(parc_min.position, { opacity: 1 }).addTo(carte).bindPopup(parc_min.nom).openPopup(); 
+
+    // const latlngs = Array();
+    // latlngs.push(utilisateur.marqueur.getLatLng());
+    // latlngs.push(parcs[parc_min.nom].marqueur.getLatLng());
+
+    // const polyline = L.polyline(latlngs, {color: 'red'}).addTo(carte);
+    // carte.fitBounds(polyline.getBounds());
+
+    L.Routing.control({
+        waypoints: [
+          L.latLng(utilisateur.marqueur.getLatLng().lat, utilisateur.marqueur.getLatLng().lng),
+          L.latLng(parcs[parc_min.nom].marqueur.getLatLng().lat, parcs[parc_min.nom].marqueur.getLatLng().lng)
+        ]
+      }).addTo(carte);
 }
 
 /////////////////////////////////////////////////
@@ -87,34 +101,3 @@ function marquer_parc(carte, parcs, ui) {
 
     selection = parcs[nom];
 }
-
-/*
-//Sur le click de la map, ajout d'un marqueur sur la carte avec le nom du pays
-map.on('click', onClick);
-
-function onClick(e) {
-    //recherche le pays sur lequel on a click�
-    //Requete AJAX pour r�cup�rer les infos du pays sur le point o� on a cliqu� (lati, longi) 
-    $.ajax({
-        type: 'GET',
-        url: "http://nominatim.openstreetmap.org/reverse",
-        dataType: 'jsonp',
-        jsonpCallback: 'data',
-        data: { format: "json", limit: 1,lat: e.latlng.lat,lon: e.latlng.lng,json_callback: 'data' },
-        error: function(xhr, status, error) {
-        alert("ERROR "+error);
-        },
-        success: function(data){
-        //r�cup�rer les coordonn�es (lati, longi) du pays dans les donn�es json provenant du serveur
-        var paysVisite="";
-        $.each(data, function() {
-            paysVisite = this['country'] ;
-        });
-        
-        //affichage des infos
-        L.marker(e.latlng).addTo(map).bindPopup("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng+" Pays : "+paysVisite).openPopup();
-        L.circle(e.latlng, 1).addTo(map);			
-        }
-    });
-}
-*/
